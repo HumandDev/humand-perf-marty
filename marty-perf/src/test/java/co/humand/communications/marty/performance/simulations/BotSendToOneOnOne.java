@@ -7,7 +7,6 @@ import static io.gatling.javaapi.core.CoreDsl.global;
 import static io.gatling.javaapi.http.HttpDsl.http;
 
 import co.humand.communications.marty.performance.configuration.Configuration;
-import co.humand.communications.marty.performance.legacy.Chat1SendOneToOne;
 import co.humand.communications.marty.performance.marty.MartySendOneToOne;
 import io.gatling.javaapi.core.Assertion;
 import io.gatling.javaapi.core.OpenInjectionStep;
@@ -22,7 +21,7 @@ public class BotSendToOneOnOne extends Simulation {
 
     {
         OpenInjectionStep onceUsers = atOnceUsers(Configuration.VIRTUAL_USERS);
-        setUp(MartySendOneToOne.scenario.injectOpen(onceUsers), Chat1SendOneToOne.scenario.injectOpen(onceUsers))
+        setUp(MartySendOneToOne.scenario.injectOpen(onceUsers))
                 .assertions(assertion)
                 .protocols(httpProtocol);
     }
