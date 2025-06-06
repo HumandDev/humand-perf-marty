@@ -37,8 +37,17 @@
 
 ## Run Performance tests
 
+For running, you need to provide the configuration. 
+There 2 ways to provide it, you can class `TargetEnvResolver` or 
+pass the value as system properties as in the example below. 
+
 ```bash
-./mvnw -pl marty-perf gatling:test
+./mvnw -pl marty-perf gatling:test \\
+ -Denv=PROD \\ 
+ -DapiKey=A_VALID_API_KEY \\
+ -DbaseUrl="https://api-prod.humand.co"
+ -DinstanceId=42 \\
+ -DbotUserId=33
 ```
 
 ## Autoformatting of code files.
