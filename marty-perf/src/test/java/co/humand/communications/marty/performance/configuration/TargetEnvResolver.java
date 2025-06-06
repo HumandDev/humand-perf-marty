@@ -48,16 +48,10 @@ public class TargetEnvResolver {
                 EnvInfoMarty.build(
                         targetEnvLowerCase,
                         "https://api.dev.humand.co/",
-                        "",
+                        "Jb58iYCzGZoQaeftapzXOeYxQsubMVw0",
                         34,
                         23320);
-            case "prod" ->
-                EnvInfoMarty.build(
-                        targetEnvLowerCase,
-                        "https://api-prod.humand.co/",
-                        "==",
-                        101651,
-                        4172874);
+            case "prod" -> EnvInfoMarty.build(targetEnvLowerCase, "https://api-prod.humand.co/", null, 101651, 4172874);
 
             default -> EnvInfoMarty.build(targetEnvLowerCase, null, null, null, null);
         };
